@@ -1,0 +1,17 @@
+name: 01-hello
+
+on:
+  push:
+    branches: [main]    
+
+jobs:
+  hello:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: greet
+        run: echo "Hello word, Github Actions"
+      - name: see runner date
+        run: date
+      - name: list folders
+        run: ls -la
+
