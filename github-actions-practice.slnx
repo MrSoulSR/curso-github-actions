@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="CalculadoraApi/CalculadoraApi.csproj" />
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path="hello.yml" />
+  </Folder>
+  <Project Path="CalculadoraApi.Tests/CalculadoraApi.Tests.csproj" />
+</Solution>

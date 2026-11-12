@@ -1,0 +1,21 @@
+@CalculadoraApi_HostAddress = http://localhost:5085
+
+GET {{CalculadoraApi_HostAddress}}/calculadora/sumar?a=2&b=3
+Accept: application/json
+
+###
+
+GET {{CalculadoraApi_HostAddress}}/calculadora/dividir?a=5&b=2
+Accept: application/json
+
+###
+
+GET {{CalculadoraApi_HostAddress}}/calculadora/dividir?a=1&b=0
+Accept: application/json
+
+###
+
+GET {{CalculadoraApi_HostAddress}}/calculadora/espar/4
+Accept: application/json
+
+###
