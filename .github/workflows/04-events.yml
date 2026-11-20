@@ -1,0 +1,26 @@
+name: 04-events
+
+on:
+  issues: 
+    types: [ opened, reopened ]
+  issue_comment: 
+
+jobs:
+  inspect-event:
+    runs-on: ubuntu-24.04
+    permissions:
+      issues: write
+    steps:
+      - name: Show github context
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Issue: ${{ github.event.issue.number }}"
+          echo "Comment ${{ github.event.comment.body }}"
+      - name: Comentar como bot en github actions
+        if: github.event_name == 'issues' && github.event.action == 'opened'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run:  
+          gh issue comment "$ISSUE_NUMBER" --body "Gracias por tu aporte. Nos pondremos en contacto contigo" --repo $GITHUB_REPOSITORY
